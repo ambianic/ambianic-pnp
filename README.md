@@ -27,7 +27,7 @@ The Ambianic PnP server should now be running on [localhost:9779](http://localho
 
 ## Deploying to Heroku
 
-You can run Ambianic PnP on many NodeJS hosting services, including Heroku. Click the button below to deploy to Heroku. 
+You can run Ambianic PnP on many NodeJS hosting services, including Heroku. Click the button below to deploy to Heroku.
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
@@ -39,6 +39,5 @@ Not available yet.
 
 ## Acknowledgements
 
-- Ambianic PnP was originally inspired by the awesome [ShareDrop](https://github.com/cowbell/sharedrop) project.
-- [PeerJS](https://github.com/peers/peerjs) is another great source of inspiration for Ambianic PnP.
-
+-   Ambianic PnP was originally inspired by the awesome [ShareDrop](https://github.com/cowbell/sharedrop) project.
+-   [PeerJS](https://github.com/peers/peerjs) is another great source of inspiration for Ambianic PnP.
