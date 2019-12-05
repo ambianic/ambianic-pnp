@@ -8,7 +8,7 @@ const uuidv1 = require('uuid/v1');
 const crypto = require('crypto');
 const requestIp = require('request-ip');
 
-function ExpressRoomServer(options) {
+function ExpressRoomServer() {
   const app = express();
 
   // Automatically allow cross-origin requests
@@ -17,8 +17,8 @@ function ExpressRoomServer(options) {
   app.use(compression());
 
   async function cryptoSeed() {
-    var buf = crypto.randomBytes(48);
-    token = buf.toString('hex');
+    let buf = crypto.randomBytes(48);
+    let token = buf.toString('hex');
     return token
   }
 
@@ -29,12 +29,16 @@ function ExpressRoomServer(options) {
   async function getSecret() {
     // get crypto safe secret from firestore
     console.log('Fetching secret from database...');
+    let secret;
+    /*
     let snapshot = await admin.database().ref('/admin/secret').once('value');
     let secret = snapshot.val()
     console.log('Fetched secret', secret);
     // if not found, create and store new secret
     if (!secret) {
+    */
       secret = await cryptoSeed()
+    /*
       console.log('Created new secret', secret);
       // store secret
       snapshot = await admin.database().ref('/admin').set({secret: secret});
@@ -43,6 +47,7 @@ function ExpressRoomServer(options) {
       secret = snapshot.val()
       console.log('value in db', secret);
     }
+    */
     return secret
   }
 
@@ -102,10 +107,10 @@ function ExpressRoomServer(options) {
     const original = req.body.text;
     // Push the new message into the Realtime Database using the Firebase Admin SDK.
     console.log('Inserting message', original);
-    const snapshot = await admin.database().ref('/messages').push({original: original});
+    // const snapshot = await admin.database().ref('/messages').push({original: original});
     // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console.
-    console.log('Inserted message at', snapshot.ref.toString());
-    res.redirect(303, snapshot.ref.toString());
+    // console.log('Inserted message at', snapshot.ref.toString());
+    res.redirect(303, '/'); //snapshot.ref.toString());
   });
 
   // app.put('/:id', (req, res) => res.send(Widgets.update(req.params.id, req.body)));
@@ -143,10 +148,10 @@ function ExpressRoomServer(options) {
   app.get('/auth', async (req, res) => {
     const ip = getClientPublicIp(req);
     const userId = uuidv1();
-    let additionalClaims = {
-      public_ip: ip
-    };
-    customToken = await admin.auth().createCustomToken(userId, additionalClaims)
+    // let additionalClaims = {
+    //  public_ip: ip
+    // };
+    let customToken = '123'; // await admin.auth().createCustomToken(userId, additionalClaims)
     res.json({ id: userId, customToken, public_ip: ip });
   });
 }
