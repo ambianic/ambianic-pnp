@@ -6,7 +6,7 @@ Ambianic PnP is a NodeJS server side app that normally runs on a host with publi
 
 By default Ambianic UI and Ambianic Edge devices use the Ambianic PnP service at pnp.ambianic.ai. The service is available for FREE to all users, but is not recommended for business critical application as it does not provide any strict uptime or SLA guarantees. For such cases, it is better to deploy and configure your own Ambianic PnP server.
 
-Ambianic PnP does not see any of the data exchanged between users and their edge devices. Its a transient "matchmaking" service without a database layer. No user data is collected, stored and used in any way. Feel free to inspect the code and point out (or rip out) any code that contradicts with Ambianic's main principles of privacy, transperancy and ultimate user control. 
+Ambianic PnP does not see any of the data exchanged between users and their edge devices. Its a transient "matchmaking" service without a database layer. No user data is collected, stored and used in any way. Please feel free to inspect the code and point out (or rip out) any code that contradicts with Ambianic's main principles of privacy, transperancy and ultimate user control.
 
 ## Project Status
 
