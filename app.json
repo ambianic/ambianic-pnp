@@ -4,6 +4,5 @@
   "website": "https://ambianic.ai/",
   "repository": "https://github.com/ambianic/ambianic-pnp",
   "logo": "https://avatars2.githubusercontent.com/u/52052162?s=400&u=b4b018adc09940394a5475fb30fa4f6b56509bcc&v=4",
-  "keywords": ["AI", "home automation", "node", "express", "heroku"],
-  "image": "heroku/nodejs"
+  "keywords": ["AI", "home automation", "node", "express", "webrtc"],
 }

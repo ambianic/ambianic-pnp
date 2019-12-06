@@ -4,7 +4,7 @@ const https = require('https');
 
 const defaultConfig = require('../config');
 const WebSocketServer = require('./services/webSocketServer');
-const Realm = require('./models/realm');
+const Realm = require('./models/pnpRealm');
 
 const init = ({ app, server, options }) => {
   const config = options;
