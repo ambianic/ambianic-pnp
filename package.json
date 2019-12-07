@@ -12,6 +12,13 @@
   },
   "author": "Ivelin Ivanov",
   "license": "Apache 2",
+  "homepage": "https://ambianic.ai",
+  "keywords": [
+    "WebRTC",
+    "p2p",
+    "Plug and Play"
+  ],
+  "private": false,
   "scripts": {
     "test": "eslint . && mocha \"test/**/*.js\"",
     "start": "bin/ambianic-pnp --port ${PORT:=9779}"
