@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.1](https://github.com/ambianic/ambianic-pnp/compare/v1.0.0...v1.0.1) (2019-12-07)
+
+
+### Bug Fixes
+
+* package keywords ([ae67f5e](https://github.com/ambianic/ambianic-pnp/commit/ae67f5e))
+
 # 1.0.0 (2019-12-07)
 
 
