@@ -1,6 +1,6 @@
 {
   "name": "ambianic-pnp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Ambianic PnP server component",
   "main": "src/index.js",
   "bin": {
