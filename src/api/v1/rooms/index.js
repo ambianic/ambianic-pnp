@@ -9,7 +9,7 @@ const crypto = require('crypto');
 const requestIp = require('request-ip');
 
 
-function ExpressRoom({ realm }) {
+function ExpressRoom(realm) {
   const app = express.Router();
 
   // Automatically allow cross-origin requests
@@ -17,6 +17,7 @@ function ExpressRoom({ realm }) {
   app.use(cookieParser());
   app.use(compression());
 
+  // console.log('realm', realm)
   let secret = realm.getSecret();
 
   app.use(
@@ -66,7 +67,7 @@ function ExpressRoom({ realm }) {
     Clients that do not share the same public IP should be unable to
     accidentally or intentionally land in anyone else's room.
   */
-  app.get('/room-name', async (req, res) => {
+  app.get('/id', async (req, res) => {
     const ip = getClientPublicIp(req)
     console.log('Calculating room name for public IP', ip)
     const roomName = crypto
@@ -81,7 +82,7 @@ function ExpressRoom({ realm }) {
     Get a list of all member peers in the same room (same room key).
     Requires room key.
   */
-  app.get('/members', (req, res) => {
+  app.get('/:room-id/members', (req, res) => {
 
     // TODO: Fetch room members
     const clientsIds = realm.getClientsIds();
@@ -95,6 +96,7 @@ function ExpressRoom({ realm }) {
 
 
 module.exports = ({ realm }) => {
-  const app = ExpressRoom(realm);
+  // console.log('realm', realm)
+  const app = new ExpressRoom(realm);
   return app
 };
