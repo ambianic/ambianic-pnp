@@ -20,7 +20,8 @@
   ],
   "private": false,
   "scripts": {
-    "test": "eslint . && mocha \"test/**/*.js\"",
+    "test": "eslint . && nyc --reporter lcovonly --reporter=text mocha \"test/**/*.js\"",
+    "codecov": "codecov",
     "start": "bin/ambianic-pnp --port ${PORT:=9779}"
   },
   "dependencies": {
@@ -33,18 +34,20 @@
     "ws": "^7.1.2"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "eslint": "^6.2.1",
-    "mocha": "^6.2.0",
-    "semistandard": "^14.0.1",
-    "sinon": "^7.4.1",
     "@semantic-release/changelog": "^3.0.5",
     "@semantic-release/commit-analyzer": "^6.3.3",
     "@semantic-release/exec": "^3.3.8",
     "@semantic-release/git": "^7.0.18",
     "@semantic-release/github": "^5.5.5",
     "@semantic-release/npm": "^5.3.4",
-    "@semantic-release/release-notes-generator": "^7.3.2"
+    "@semantic-release/release-notes-generator": "^7.3.2",
+    "chai": "^4.2.0",
+    "codecov": "^3.6.1",
+    "eslint": "^6.2.1",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "semistandard": "^14.0.1",
+    "sinon": "^7.4.1"
   },
   "engines": {
     "node": ">=12"
