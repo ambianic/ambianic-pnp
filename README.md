@@ -6,7 +6,7 @@
 [![npm version](https://badge.fury.io/js/ambianic-pnp.svg)](https://badge.fury.io/js/ambianic-pnp)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![codecov](https://codecov.io/gh/ambianic/ambianic-pnp/branch/master/graph/badge.svg)](https://codecov.io/gh/ambianic/ambianic-pnp)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fambianic%2Fambianic-pnp.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fambianic%2Fambianic-pnp?ref=badge_shield) 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fambianic%2Fambianic-pnp.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fambianic%2Fambianic-pnp?ref=badge_shield)
 [![CodeFactor](https://www.codefactor.io/repository/github/ambianic/ambianic-pnp/badge)](https://www.codefactor.io/repository/github/ambianic/ambianic-pnp)
 
 
