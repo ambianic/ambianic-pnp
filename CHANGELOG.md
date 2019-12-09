@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.3](https://github.com/ambianic/ambianic-pnp/compare/v1.0.2...v1.0.3) (2019-12-09)
+
+
+### Bug Fixes
+
+* room API ([df43332](https://github.com/ambianic/ambianic-pnp/commit/df43332))
+
 ## [1.0.2](https://github.com/ambianic/ambianic-pnp/compare/v1.0.1...v1.0.2) (2019-12-09)
 
 
