@@ -16,7 +16,8 @@
   "keywords": [
     "WebRTC",
     "p2p",
-    "Plug and Play"
+    "Plug and Play",
+    "NodeJS"
   ],
   "private": false,
   "scripts": {
