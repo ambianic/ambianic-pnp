@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.2](https://github.com/ambianic/ambianic-pnp/compare/v1.0.1...v1.0.2) (2019-12-09)
+
+
+### Bug Fixes
+
+* test codecov in semrel ([8ded661](https://github.com/ambianic/ambianic-pnp/commit/8ded661))
+
 ## [1.0.1](https://github.com/ambianic/ambianic-pnp/compare/v1.0.0...v1.0.1) (2019-12-07)
 
 
