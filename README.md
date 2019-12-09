@@ -7,7 +7,6 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![codecov](https://codecov.io/gh/ambianic/ambianic-pnp/branch/master/graph/badge.svg)](https://codecov.io/gh/ambianic/ambianic-pnp)
 
-
 Ambianic Plug and Play (PnP) allows Ambianic UI users to discover local Ambianic Edge devices automaticallyand control them remotely on the go.
 
 Ambianic PnP is a NodeJS server side app that normally runs on a host with public IP which can be accessed at all times by Ambianic UI client devices and Ambianic Edge devices. It acts as a [WebRTC peer discovery](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling) server.
