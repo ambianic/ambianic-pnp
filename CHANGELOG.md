@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.4](https://github.com/ambianic/ambianic-pnp/compare/v1.0.3...v1.0.4) (2019-12-09)
+
+
+### Bug Fixes
+
+* build scripts ([4e7a13f](https://github.com/ambianic/ambianic-pnp/commit/4e7a13f))
+
 ## [1.0.3](https://github.com/ambianic/ambianic-pnp/compare/v1.0.2...v1.0.3) (2019-12-09)
 
 
