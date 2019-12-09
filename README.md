@@ -33,6 +33,10 @@ You can run Ambianic PnP on many NodeJS hosting services, including Heroku. Clic
 
 Alternatively you can use the [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
+## NPM package
+
+Ambianic PnP is packaged and released to npmjs as [ambianic-pnp](https://www.npmjs.com/package/ambianic-pnp).
+
 ## Documentation
 
 Not available yet.
