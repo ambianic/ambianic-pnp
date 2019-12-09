@@ -27,8 +27,14 @@ jobs:
     - name: Generate Code Coverage Report
       run: |
         istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && codecov     
+    - name: Semantic Release
+      uses: codfish/semantic-release-action@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Codecov upload
       id: codecov
+      if: success()
       uses: codecov/codecov-action@v1.0.5
       with:
           token: ${{ secrets.CODECOV_TOKEN }} #required
@@ -37,8 +43,3 @@ jobs:
           name: codecov-ambianic-pnp #optional
           # yml: ./codecov.yml #optional
           fail_ci_if_error: true #optional (default = false) 
-    - name: Semantic Release
-      uses: codfish/semantic-release-action@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
