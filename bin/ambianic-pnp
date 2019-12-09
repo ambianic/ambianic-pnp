@@ -88,7 +88,7 @@ const server = PeerServer(opts, server => {
   const port = server.address().port;
 
   console.log(
-    'Started PeerServer on %s, port: %s, path: %s (v. %s)',
+    'Started Ambianic PnP Server on %s, port: %s, path: %s (v. %s)',
     host, port, userPath || '/', version
   );
 });

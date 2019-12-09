@@ -1,0 +1,22 @@
+name: Continuous Deployment to Heroku
+
+on:
+  # Trigger when a new release is published from master branch
+  release:
+    branches:
+      - master
+    types:
+      - published
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - name: GitHub Action for Heroku
+      uses: actions/heroku@1.0.0
