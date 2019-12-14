@@ -41,7 +41,7 @@ describe('checkBrokenConnections service', () => {
                 expect(realm.getClientById('id')).to.be.undefined;
                 checkBrokenConnections.stop();
                 done();
-            }, checkBrokenConnections.CHECK_INTERVAL * 2 + 10);
+            }, checkBrokenConnections.CHECK_INTERVAL * 2 + 30);
         }, checkBrokenConnections.CHECK_INTERVAL);
     });
 });

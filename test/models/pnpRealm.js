@@ -13,8 +13,7 @@ describe('PnpRealm', () => {
     it('should return undefined for a non-existent room', () => {
       const realm = new PnpRealm();
       const roomName = 'room-name';
-      realm.getRoom(roomName);
-      expect(realm.getRoom(roomName)).to.be.undefined;
+      expect(realm.getRoomMembers(roomName)).to.be.undefined;
     });
 
     it('should return Set with clientIds added to the room', () => {
@@ -22,7 +21,7 @@ describe('PnpRealm', () => {
       const roomName = 'room-name';
       const clientId = 'clientId';
       const members1 = realm.joinRoom(clientId, roomName);
-      const members2 = realm.getRoom(roomName)
+      const members2 = realm.getRoomMembers(roomName)
       expect(members1).to.deep.eq(members2)
       expect(members2.size).to.eq(1)
       expect(members2.has(clientId)).to.eq(true)

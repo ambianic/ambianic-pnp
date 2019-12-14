@@ -54,7 +54,7 @@ function ExpressRoom(realm) {
   }
 
   /**
-    Get unique room name based on client's public IP hash.
+    Get unique room name based on client's public IP address.
     Presumably devices located in the same physical room share the same
     trusted local WiFi/LAN and hence same public IP.
 
@@ -64,8 +64,8 @@ function ExpressRoom(realm) {
     Room name is generated such that all clients with
     the same public IP will find each other in the same room.
 
-    Clients that do not share the same public IP should be unable to
-    accidentally or intentionally land in anyone else's room.
+    Clients that do not share the same public IP should not be unable to
+    accidentally or intentionally join each other's rooms.
   */
   app.get('/id', async (req, res) => {
     const ip = getClientPublicIp(req)
@@ -82,12 +82,34 @@ function ExpressRoom(realm) {
     Get a list of all member peers in the same room (same room key).
     Requires room key.
   */
-  app.get('/:room-id/members', (req, res) => {
+  app.get('/:roomId/members', (req, res) => {
+    const { roomId } = req.params;
 
-    // TODO: Fetch room members
-    const clientsIds = realm.getClientsIds();
+    const clientsIds = realm.getRoomMembers(roomId);
 
     return res.send(clientsIds);
+  });
+
+  /**
+    Join a peer room.
+  */
+  app.post('/:roomId/join', (req, res) => {
+    const { roomId } = req.params;
+
+    const clientsIds = realm.joinRoom(roomId);
+
+    return res.send(clientsIds);
+  });
+
+  /**
+    Get a list of all member peers in the same room.
+  */
+  app.post('/:roomId/leave', (req, res) => {
+    const { id, roomId } = req.params;
+
+    const wasInRoom = realm.leaveRoom(id, roomId);
+
+    return res.send(wasInRoom);
   });
 
   return app;
