@@ -18,6 +18,9 @@ const init = ({ app, server, options }) => {
       app.emit('disconnect', client);
     }
   });
+  const checkRoomMembers = require('./services/checkRoomMembers')({
+    realm
+  });
 
   app.use(options.path, api);
 
@@ -60,6 +63,8 @@ const init = ({ app, server, options }) => {
   startMessagesExpiration();
 
   checkBrokenConnections.start();
+
+  checkRoomMembers.start();
 };
 
 function ExpressPeerServer(server, options) {
