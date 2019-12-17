@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.6](https://github.com/ambianic/ambianic-pnp/compare/v1.0.5...v1.0.6) (2019-12-17)
+
+
+### Bug Fixes
+
+* room management ([65fa876](https://github.com/ambianic/ambianic-pnp/commit/65fa876))
+
 ## [1.0.5](https://github.com/ambianic/ambianic-pnp/compare/v1.0.4...v1.0.5) (2019-12-14)
 
 
