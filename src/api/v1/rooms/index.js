@@ -70,12 +70,12 @@ function ExpressRoom(realm) {
   app.get('/id', async (req, res) => {
     const ip = getClientPublicIp(req)
     console.log('Calculating room name for public IP', ip)
-    const roomName = crypto
+    const roomId = crypto
       .createHmac('sha1', realm.getSecret())
       .update(ip)
       .digest('hex');
-    console.log('Calculated room name %s for public IP %s', roomName, ip)
-    res.json({ roomName });
+    console.log('Calculated room name %s for public IP %s', roomId, ip)
+    res.json({ roomId });
   });
 
   /**

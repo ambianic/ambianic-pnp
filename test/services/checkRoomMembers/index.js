@@ -17,7 +17,7 @@ describe('checkRoomMembers service', () => {
         checkRoomMembers.start();
 
         setTimeout(() => {
-            expect(realm.getRoomMembers('roomId').size).to.eq(1);
+            expect(realm.getRoomMembers('roomId').length).to.eq(1);
         }, checkRoomMembers.CHECK_INTERVAL * 1);
 
         setTimeout(() => {
@@ -25,7 +25,7 @@ describe('checkRoomMembers service', () => {
         }, checkRoomMembers.CHECK_INTERVAL * 2);
 
         setTimeout(() => {
-            expect(realm.getRoomMembers('roomId')).to.be.undefined;
+            expect(realm.getRoomMembers('roomId').length).to.eq(0);
             checkRoomMembers.stop();
             done();
         }, checkRoomMembers.CHECK_INTERVAL * 3);

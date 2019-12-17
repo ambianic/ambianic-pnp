@@ -28,8 +28,18 @@ class PnpRealm extends Realm {
     Return room set with all present member clientIds.
   */
   getRoomMembers (roomId) {
-    let room =  this._rooms.get(roomId);
-    return room
+    let room
+    if (roomId) {
+      room =  this._rooms.get(roomId);
+    }
+    if (room) {
+      const roomMembers = [...room]
+      console.log('room id: %s, members: %s', roomId, roomMembers)
+      return roomMembers
+    } else {
+      console.log('room id: %s does not exist in realm.', roomId)
+      return []
+    }
   }
 
   /**
@@ -44,7 +54,9 @@ class PnpRealm extends Realm {
       this._rooms.set(roomId, room)
     }
     room.add(clientId)
-    return room
+    const roomMembers = [...room]
+    console.log('joined room with members', roomId, roomMembers)
+    return roomMembers
   }
 
   /**
