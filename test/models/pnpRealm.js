@@ -9,22 +9,27 @@ describe('PnpRealm', () => {
     });
   });
 
-  describe('#getRoom', () => {
-    it('should return undefined for a non-existent room', () => {
+  describe('#getRoomMembers', () => {
+    it('should return [] for a non-existent room', () => {
       const realm = new PnpRealm();
       const roomName = 'room-name';
-      expect(realm.getRoomMembers(roomName)).to.be.undefined;
+      const members = realm.getRoomMembers(roomName)
+      console.log('room members: %s', members)
+      expect(members.length).to.eq(0);
     });
 
-    it('should return Set with clientIds added to the room', () => {
+    it('should return array with clientIds added to the room', () => {
       const realm = new PnpRealm();
       const roomName = 'room-name';
       const clientId = 'clientId';
       const members1 = realm.joinRoom(clientId, roomName);
+      console.log('members1', members1)
+      expect(members1.length).to.eq(1)
       const members2 = realm.getRoomMembers(roomName)
+      console.log('members2', members2)
+      expect(members2.length).to.eq(1)
       expect(members1).to.deep.eq(members2)
-      expect(members2.size).to.eq(1)
-      expect(members2.has(clientId)).to.eq(true)
+      expect(members2.includes(clientId)).to.eq(true)
     });
   });
 
@@ -34,8 +39,8 @@ describe('PnpRealm', () => {
       const roomName = 'room-name';
       const clientId = 'clientId';
       const members = realm.joinRoom(clientId, roomName);
-      expect(members.size).to.eq(1)
-      expect(members.has(clientId)).to.be.true;
+      expect(members.length).to.eq(1)
+      expect(members.includes(clientId)).to.be.true;
     });
   });
 
@@ -45,10 +50,12 @@ describe('PnpRealm', () => {
       const roomName = 'room-name';
       const clientId = 'clientId';
       const members = realm.joinRoom(clientId, roomName);
+      expect(members.includes(clientId)).to.be.true;
       const wasInRoom = realm.leaveRoom(clientId, roomName);
       expect(wasInRoom).to.be.true;
-      expect(members.has(clientId)).to.be.false;
-      expect(members.size).to.eq(0);
+      const membersAfter = realm.getRoomMembers(roomName);
+      expect(membersAfter.includes(clientId)).to.be.false;
+      expect(membersAfter.length).to.eq(0);
     });
   });
 });

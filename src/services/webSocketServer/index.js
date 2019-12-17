@@ -19,7 +19,7 @@ class WebSocketServer extends EventEmitter {
     this._wss.on('connection', (socket, req) => this._onSocketConnection(socket, req));
     this._wss.on('error', (error) => this._onSocketError(error));
   }
-
+  
   _onSocketConnection(socket, req) {
     const { query = {} } = url.parse(req.url, true);
 

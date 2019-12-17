@@ -18,9 +18,7 @@ const init = ({ app, server, options }) => {
       app.emit('disconnect', client);
     }
   });
-  const checkRoomMembers = require('./services/checkRoomMembers')({
-    realm
-  });
+  const checkRoomMembers = require('./services/checkRoomMembers')({ realm });
 
   app.use(options.path, api);
 
