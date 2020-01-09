@@ -41,9 +41,9 @@ module.exports = ({ realm }) => {
     // console.log('Request', req)
     // console.log('Request headers', req.headers)
     // console.log('Request cf-connecting-ip', req.headers['cf-connecting-ip'])
-    console.log('rooms: getClientPublicIp Http Request ip', req.ip)
+    // console.debug('rooms: getClientPublicIp Http Request ip', req.ip)
     let ip = requestIp.getClientIp(req);
-    console.log('rooms: Final client public ip resolution', ip)
+    // console.debug('rooms: Final client public ip resolution', ip)
     if (ip) {
       return ip
     } else {
@@ -72,18 +72,18 @@ module.exports = ({ realm }) => {
   app.get('/id', async (req, res, next) => {
     const { id } = req.params;
 
-    console.log('rooms: Client id %s requested room id. Request url: %s, params %s',
-      id, req.originalUrl, req.params)
+    // console.debug('rooms: Client id %s requested room id. Request url: %s, params %s',
+    //   id, req.originalUrl, req.params)
 
     if (!id) return next();
 
     const ip = getClientPublicIp(req)
-    console.log('rooms: Calculating room name for public IP', ip)
+    // console.log('rooms: Calculating room name for public IP', ip)
     const roomId = crypto
       .createHmac('sha1', realm.getSecret())
       .update(ip)
       .digest('hex');
-    console.log('rooms: Calculated room name %s for public IP %s', roomId, ip)
+    // console.log('rooms: Calculated room name %s for public IP %s', roomId, ip)
     return res.send({ roomId });
   });
 
@@ -93,10 +93,10 @@ module.exports = ({ realm }) => {
   */
   app.get('/:roomId/members', (req, res, next) => {
     const { id, roomId } = req.params;
-    console.log('rooms: Client id %s obtaining room id %s members.', id, roomId)
+    // console.log('rooms: Client id %s obtaining room id %s members.', id, roomId)
     if (!id || !roomId) return next();
     const clientsIds = realm.getRoomMembers(roomId);
-    console.log('rooms: Room id %s members: %s', roomId, clientsIds)
+    // console.log('rooms: Room id %s members: %s', roomId, clientsIds)
     return res.send(clientsIds);
   });
 
@@ -105,11 +105,11 @@ module.exports = ({ realm }) => {
   */
   app.post('/:roomId/join', (req, res, next) => {
     const { id, roomId } = req.params;
-    console.log('rooms: Client id %s joining room id %s.', id, roomId)
+    // console.log('rooms: Client id %s joining room id %s.', id, roomId)
     if (!id || !roomId) return next();
     const clientsIds = realm.joinRoom(id, roomId);
-    console.log('rooms: Room id %s members after client id %s joined: %s.',
-      roomId, id, clientsIds)
+    // console.log('rooms: Room id %s members after client id %s joined: %s.',
+    //  roomId, id, clientsIds)
     return res.send({ clientsIds });
   });
 
@@ -118,7 +118,7 @@ module.exports = ({ realm }) => {
   */
   app.post('/:roomId/leave', (req, res, next) => {
     const { id, roomId } = req.params;
-    console.log('rooms: Client id %s leaving room id %s.', id, roomId)
+    // console.log('rooms: Client id %s leaving room id %s.', id, roomId)
     if (!id || !roomId) return next();
     const wasInRoom = realm.leaveRoom(id, roomId);
     return res.send({ wasInRoom });

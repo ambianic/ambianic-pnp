@@ -26,13 +26,13 @@ class WebSocketServer extends EventEmitter {
     const { id, token, key } = query;
 
     if (!id || !token || !key) {
-      console.log('websockets: Invalid websocket parameters, id %s, token %s, key %s',
+      console.warning('websockets: Invalid websocket parameters, id %s, token %s, key %s',
         id, token, key)
       return this._sendErrorAndClose(socket, Errors.INVALID_WS_PARAMETERS);
     }
 
     if (key !== this.config.key) {
-      console.log('websockets: Invalid key: %s')
+      console.warning('websockets: Invalid key: %s')
       return this._sendErrorAndClose(socket, Errors.INVALID_KEY);
     }
 
@@ -40,7 +40,7 @@ class WebSocketServer extends EventEmitter {
 
     if (client) {
       if (token !== client.getToken()) {
-        console.log('websockets: ID %s is taken. Invalid token: %s', id, token)
+        console.info('websockets: ID %s is taken. Invalid token: %s', id, token)
         // ID-taken, invalid token
         socket.send(JSON.stringify({
           type: MessageType.ID_TAKEN,
@@ -103,6 +103,21 @@ class WebSocketServer extends EventEmitter {
         console.log('websockets: Client id %s sent a message %s',
           client.getId(), message);
 
+        this.emit('message', client, message);
+      } catch (e) {
+        this.emit('error', e);
+      }
+    });
+
+    // Handle RFC standard pings from peers.
+    // https://tools.ietf.org/html/rfc6455#section-5.5.2
+    socket.on('ping', () => {
+      try {
+        const type = MessageType.HEARTBEAT;
+        const src = client.getId();
+        const message = { type, src }
+        console.log('websockets: Client id %s sent an RFC6455 ping message',
+          client.getId());
         this.emit('message', client, message);
       } catch (e) {
         this.emit('error', e);

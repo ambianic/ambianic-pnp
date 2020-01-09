@@ -55,8 +55,8 @@ class PnpRealm extends Realm {
     }
     room.add(clientId)
     const roomMembers = [...room]
-    console.log('Client id %s joined room %s with members %s',
-      clientId, roomId, roomMembers)
+    // console.debug('Client id %s joined room %s with members %s',
+    //  clientId, roomId, roomMembers)
     return roomMembers
   }
 
