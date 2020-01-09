@@ -1,10 +1,21 @@
 const express = require('express');
 
 module.exports = ({ realm, messageHandler }) => {
-  const app = express.Router();
+  const app = express.Router({ mergeParams: true });
+
+  console.log('calls: ...');
 
   const handle = (req, res, next) => {
-    const { id } = req.params;
+    const { key, id, token } = req.params;
+
+    console.log('calls: Client key %s, id %s, token %s',
+      key, id, token);
+
+    console.error('calls: req.originalUrl %s',
+      req.originalUrl);
+
+    console.log('calls: req.params %s',
+      req.params);
 
     if (!id) return next();
 

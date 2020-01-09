@@ -19,17 +19,20 @@ class WebSocketServer extends EventEmitter {
     this._wss.on('connection', (socket, req) => this._onSocketConnection(socket, req));
     this._wss.on('error', (error) => this._onSocketError(error));
   }
-  
+
   _onSocketConnection(socket, req) {
     const { query = {} } = url.parse(req.url, true);
 
     const { id, token, key } = query;
 
     if (!id || !token || !key) {
+      console.log('websockets: Invalid websocket parameters, id %s, token %s, key %s',
+        id, token, key)
       return this._sendErrorAndClose(socket, Errors.INVALID_WS_PARAMETERS);
     }
 
     if (key !== this.config.key) {
+      console.log('websockets: Invalid key: %s')
       return this._sendErrorAndClose(socket, Errors.INVALID_KEY);
     }
 
@@ -37,6 +40,7 @@ class WebSocketServer extends EventEmitter {
 
     if (client) {
       if (token !== client.getToken()) {
+        console.log('websockets: ID %s is taken. Invalid token: %s', id, token)
         // ID-taken, invalid token
         socket.send(JSON.stringify({
           type: MessageType.ID_TAKEN,
@@ -69,6 +73,8 @@ class WebSocketServer extends EventEmitter {
     this.realm.setClient(newClient, id);
     socket.send(JSON.stringify({ type: MessageType.OPEN }));
 
+    console.log('websockets: Client id %s registered.', id)
+
     this._configureWS(socket, newClient);
   }
 
@@ -79,6 +85,10 @@ class WebSocketServer extends EventEmitter {
     socket.on('close', () => {
       if (client.socket === socket) {
         this.realm.removeClientById(client.getId());
+
+        console.log('websockets: Client id %s disconected.',
+          client.getId());
+
         this.emit('close', client);
       }
     });
@@ -90,12 +100,17 @@ class WebSocketServer extends EventEmitter {
 
         message.src = client.getId();
 
+        console.log('websockets: Client id %s sent a message %s',
+          client.getId(), message);
+
         this.emit('message', client, message);
       } catch (e) {
         this.emit('error', e);
       }
     });
 
+    console.log('websockets: Client id %s connected to signaling server.',
+      client.getId());
     this.emit('connection', client);
   }
 
