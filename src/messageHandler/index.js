@@ -12,7 +12,7 @@ class MessageHandlers {
   handle(client, message) {
     const { type } = message;
 
-    console.debug('messageHandler: handling cliend id % message %s',
+    console.debug('messageHandler: handling cliend id %s message %s',
       client.getId(), message)
 
     const handler = this.handlers[type];
