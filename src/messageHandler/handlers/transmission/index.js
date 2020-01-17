@@ -13,6 +13,16 @@ module.exports = ({ realm }) => (client, message) => {
       if (destinationClient.socket) {
         const data = JSON.stringify(message);
 
+        console.debug(
+                `transmission messageHandler:
+                \n from client id %s
+                \n to cliend id %s
+                \n message %s
+                `,
+                client.getId(),
+                destinationClient.getId(),
+                message)
+
         destinationClient.socket.send(data);
       } else {
         // Neither socket no res available. Peer dead?
