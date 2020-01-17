@@ -1,5 +1,14 @@
 # Semantic Versioning Changelog
 
+## [1.0.7](https://github.com/ambianic/ambianic-pnp/compare/v1.0.6...v1.0.7) (2020-01-17)
+
+
+### Bug Fixes
+
+* datachannel handshake bugs between python and js peers ([b120151](https://github.com/ambianic/ambianic-pnp/commit/b120151))
+* p2p dataconnection fixes ([facf00b](https://github.com/ambianic/ambianic-pnp/commit/facf00b))
+* polishing signaling server communication with js and python clients; fix room membership api ([3fe3f84](https://github.com/ambianic/ambianic-pnp/commit/3fe3f84))
+
 ## [1.0.6](https://github.com/ambianic/ambianic-pnp/compare/v1.0.5...v1.0.6) (2019-12-17)
 
 
