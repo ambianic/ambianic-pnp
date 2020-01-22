@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.8](https://github.com/ambianic/ambianic-pnp/compare/v1.0.7...v1.0.8) (2020-01-22)
+
+
+### Bug Fixes
+
+* check interval for room membership ([fdd4489](https://github.com/ambianic/ambianic-pnp/commit/fdd4489))
+
 ## [1.0.7](https://github.com/ambianic/ambianic-pnp/compare/v1.0.6...v1.0.7) (2020-01-17)
 
 
