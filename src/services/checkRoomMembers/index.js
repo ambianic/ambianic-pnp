@@ -1,7 +1,7 @@
 /**
   Periodically clean up room membership.
 */
-const DEFAULT_CHECK_INTERVAL = 30000;
+const DEFAULT_CHECK_INTERVAL = 3000;
 
 module.exports = ({ realm, checkInterval = DEFAULT_CHECK_INTERVAL }) => {
   /**
