@@ -18,10 +18,6 @@ By default Ambianic UI and Ambianic Edge devices use the Ambianic PnP service at
 
 Ambianic PnP does not see any of the data exchanged between users and their edge devices. Its a transient "matchmaking" service without a database layer. No user data is collected, stored and used in any way. Please feel free to inspect the code and point out (or rip out) any code that contradicts with Ambianic's main principles of privacy, transperancy and ultimate user control.
 
-## Project Status
-
-Currently in early development phase. We are a few weeks away from an initial public release.
-
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
@@ -49,7 +45,7 @@ Ambianic PnP is packaged and released to npmjs as [ambianic-pnp](https://www.npm
 
 ## Documentation
 
-Not available yet.
+Not available yet. Contributors welcome!
 
 ## Acknowledgements
 
