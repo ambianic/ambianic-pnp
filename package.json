@@ -25,6 +25,10 @@
     "codecov": "codecov",
     "start": "bin/ambianic-pnp --port ${PORT:=9779}"
   },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/ambianic"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
