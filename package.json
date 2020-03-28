@@ -1,6 +1,6 @@
 {
   "name": "ambianic-pnp",
-  "version": "1.0.1",
+  "version": "1.0.8",
   "description": "Ambianic PnP server component",
   "main": "src/index.js",
   "bin": {
@@ -43,20 +43,20 @@
     "ws": "^7.1.2"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.5",
-    "@semantic-release/commit-analyzer": "^6.3.3",
-    "@semantic-release/exec": "^3.3.8",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/commit-analyzer": "^7.0.0",
+    "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^7.0.18",
-    "@semantic-release/github": "^5.5.5",
+    "@semantic-release/github": "^7.0.3",
     "@semantic-release/npm": "^5.3.4",
-    "@semantic-release/release-notes-generator": "^7.3.2",
+    "@semantic-release/release-notes-generator": "^9.0.0",
     "chai": "^4.2.0",
     "codecov": "^3.6.1",
     "eslint": "^6.2.1",
     "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.0.0",
     "semistandard": "^14.0.1",
-    "sinon": "^7.4.1"
+    "sinon": "^8.0.0"
   },
   "engines": {
     "node": ">=12"
