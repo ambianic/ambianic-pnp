@@ -1,6 +1,6 @@
 {
   "name": "ambianic-pnp",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Ambianic PnP server component",
   "main": "src/index.js",
   "bin": {
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.0",
-    "@semantic-release/commit-analyzer": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^7.0.18",
     "@semantic-release/github": "^7.0.3",

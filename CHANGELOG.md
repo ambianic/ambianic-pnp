@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.9](https://github.com/ambianic/ambianic-pnp/compare/v1.0.8...v1.0.9) (2020-03-28)
+
+
+### Bug Fixes
+
+* log warn messages on room joinining ([45b19c8](https://github.com/ambianic/ambianic-pnp/commit/45b19c8))
+
 ## [1.0.8](https://github.com/ambianic/ambianic-pnp/compare/v1.0.7...v1.0.8) (2020-01-22)
 
 
