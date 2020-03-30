@@ -1,5 +1,13 @@
 # Semantic Versioning Changelog
 
+## [1.0.10](https://github.com/ambianic/ambianic-pnp/compare/v1.0.9...v1.0.10) (2020-03-30)
+
+
+### Bug Fixes
+
+* merge branch 'master' into dev ([b812eaf](https://github.com/ambianic/ambianic-pnp/commit/b812eaf))
+* merge branch 'master' into dev ([a8e8b13](https://github.com/ambianic/ambianic-pnp/commit/a8e8b13))
+
 ## [1.0.9](https://github.com/ambianic/ambianic-pnp/compare/v1.0.8...v1.0.9) (2020-03-28)
 
 
