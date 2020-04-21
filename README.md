@@ -1,7 +1,6 @@
 # Ambianic PnP
 
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ambianic/ambianic-pnp.svg)](https://greenkeeper.io/)
 [![NodeJS CI](https://github.com/ambianic/ambianic-pnp/workflows/Node%20CI/badge.svg)](https://github.com/ambianic/ambianic-pnp/actions?query=workflow%3A%22Node+CI%22)
 [![npm version](https://badge.fury.io/js/ambianic-pnp.svg)](https://badge.fury.io/js/ambianic-pnp)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
