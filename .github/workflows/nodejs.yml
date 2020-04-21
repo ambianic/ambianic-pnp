@@ -25,6 +25,13 @@ jobs:
         npm test
       env:
         CI: true
+    - uses: codecov/codecov-action@v1.0.6
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+        # file: ./coverage/coverage-final.json # optional
+        flags: unittests # optional
+        name: codecov-umbrella # optional
+        fail_ci_if_error: true # optional (default = false)
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
       env:
