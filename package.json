@@ -51,7 +51,7 @@
     "@semantic-release/npm": "^5.3.4",
     "@semantic-release/release-notes-generator": "^9.0.0",
     "chai": "^4.2.0",
-    "codecov": "^3.6.1",
+    "codecov": "^3.6.5",
     "eslint": "^6.2.1",
     "mocha": "^6.2.0",
     "nyc": "^15.0.0",
