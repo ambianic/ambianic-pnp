@@ -26,8 +26,7 @@ jobs:
       env:
         CI: true
     - name: Semantic Release
-      uses: codfish/semantic-release-action@v1
+      uses: cycjimmy/semantic-release-action@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
