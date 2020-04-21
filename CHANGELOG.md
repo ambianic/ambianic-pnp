@@ -1,5 +1,14 @@
 # Semantic Versioning Changelog
 
+## [1.0.11](https://github.com/ambianic/ambianic-pnp/compare/v1.0.10...v1.0.11) (2020-04-21)
+
+
+### Bug Fixes
+
+* dependencies ([2ae47f8](https://github.com/ambianic/ambianic-pnp/commit/2ae47f8d96dea417d33eb7b5646ab443826b8f30))
+* merge pull request [#49](https://github.com/ambianic/ambianic-pnp/issues/49) from ambianic/dependabot/npm_and_yarn/uuidv4-6.0.7 ([e3235f3](https://github.com/ambianic/ambianic-pnp/commit/e3235f3d8a60d3f7a0a3478eb3dd49136940890a))
+* merge pull request [#50](https://github.com/ambianic/ambianic-pnp/issues/50) from ambianic/dependabot/npm_and_yarn/cookie-session-1.4.0 ([106fe4c](https://github.com/ambianic/ambianic-pnp/commit/106fe4cb0e9e2bb0f36b2eaeac789bef23c41475))
+
 ## [1.0.10](https://github.com/ambianic/ambianic-pnp/compare/v1.0.9...v1.0.10) (2020-03-30)
 
 
