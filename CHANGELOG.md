@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.14](https://github.com/ambianic/ambianic-pnp/compare/v1.0.13...v1.0.14) (2020-04-22)
+
+
+### Bug Fixes
+
+* uuidv4 refs ([f999bb6](https://github.com/ambianic/ambianic-pnp/commit/f999bb6bf447db4007742f764c6edf3086ea275b))
+
 ## [1.0.13](https://github.com/ambianic/ambianic-pnp/compare/v1.0.12...v1.0.13) (2020-04-22)
 
 
