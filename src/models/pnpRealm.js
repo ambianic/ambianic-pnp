@@ -1,4 +1,4 @@
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuidv4');
 const Realm = require('./realm');
 
 class PnpRealm extends Realm {
