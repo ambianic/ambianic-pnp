@@ -1,4 +1,4 @@
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuidv4');
 const MessageQueue = require('./messageQueue');
 
 class Realm {
@@ -44,9 +44,9 @@ class Realm {
   }
 
   generateClientId () {
-    let clientId = uuidv4();
+    let clientId = uuidv4.uuid();
     while (this.getClientById(clientId)) {
-      clientId = uuidv4();
+      clientId = uuidv4.uuid();
     }
     return clientId;
   }
