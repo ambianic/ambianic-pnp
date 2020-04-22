@@ -1,5 +1,12 @@
 # Semantic Versioning Changelog
 
+## [1.0.12](https://github.com/ambianic/ambianic-pnp/compare/v1.0.11...v1.0.12) (2020-04-22)
+
+
+### Bug Fixes
+
+* npm dependenecies ([2e473a2](https://github.com/ambianic/ambianic-pnp/commit/2e473a2ba7be40e363d5f980d19f210d6ff40474))
+
 ## [1.0.11](https://github.com/ambianic/ambianic-pnp/compare/v1.0.10...v1.0.11) (2020-04-21)
 
 
