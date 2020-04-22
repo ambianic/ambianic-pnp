@@ -1,4 +1,4 @@
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuidv4');
 const Realm = require('./realm');
 
 class PnpRealm extends Realm {
@@ -10,7 +10,7 @@ class PnpRealm extends Realm {
 
   getSecret () {
     if (!this._secret) {
-      this._secret = uuidv4();
+      this._secret = uuidv4.uuid();
     }
     return this._secret;
   }
