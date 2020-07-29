@@ -16,5 +16,6 @@ npm-debug.log
 
 .idea
 
+.env
 .nyc_output
 coverage

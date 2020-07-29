@@ -1,15 +1,15 @@
 module.exports = {
   port: 9779,
-  expire_timeout: 5000,
-  alive_timeout: 60000,
-  key: 'ambianic-pnp',
+  expire_timeout: process.env.EXPIRE_TIMEOUT,
+  alive_timeout: process.env.ALIVE_TIMEOUT,
+  key: process.env.KEY,
   path: '/',
-  concurrent_limit: 5000,
+  concurrent_limit: process.env.CONCURRENT_LIMIT,
   allow_discovery: false,
   proxied: false,
-  cleanup_out_msgs: 1000,
+  cleanup_out_msgs: process.env.CLEANOUT_MSGS,
   ssl: {
-    key: '',
-    cert: ''
+    key: process.env.SSL_KEY,
+    cert: process.env.SSL_CERT
   }
 };

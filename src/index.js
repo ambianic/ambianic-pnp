@@ -1,24 +1,44 @@
+require('dotenv').config()
 const express = require('express');
 const http = require('http');
 const https = require('https');
-
 const defaultConfig = require('../config');
 const WebSocketServer = require('./services/webSocketServer');
 const Realm = require('./models/pnpRealm');
 
-const init = ({ app, server, options }) => {
+const init = ({
+  app,
+  server,
+  options
+}) => {
   const config = options;
   const realm = new Realm();
-  const messageHandler = require('./messageHandler')({ realm });
-  const api = require('./api')({ config, realm, messageHandler });
+  const messageHandler = require('./messageHandler')({
+    realm
+  });
+  const api = require('./api')({
+    config,
+    realm,
+    messageHandler
+  });
 
-  const { startMessagesExpiration } = require('./services/messagesExpire')({ realm, config, messageHandler });
+  const {
+    startMessagesExpiration
+  } = require('./services/messagesExpire')({
+    realm,
+    config,
+    messageHandler
+  });
   const checkBrokenConnections = require('./services/checkBrokenConnections')({
-    realm, config, onClose: (client) => {
+    realm,
+    config,
+    onClose: (client) => {
       app.emit('disconnect', client);
     }
   });
-  const checkRoomMembers = require('./services/checkRoomMembers')({ realm });
+  const checkRoomMembers = require('./services/checkRoomMembers')({
+    realm
+  });
 
   app.use(options.path, api);
 
@@ -83,7 +103,11 @@ function ExpressPeerServer(server, options) {
         'can\'t start PeerServer');
     }
 
-    init({ app, server, options });
+    init({
+      app,
+      server,
+      options
+    });
   });
 
   return app;
