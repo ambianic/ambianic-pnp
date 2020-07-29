@@ -1,13 +1,11 @@
 # Ambianic PnP
 
-
 [![NodeJS CI](https://github.com/ambianic/ambianic-pnp/workflows/Node%20CI/badge.svg)](https://github.com/ambianic/ambianic-pnp/actions?query=workflow%3A%22Node+CI%22)
 [![npm version](https://badge.fury.io/js/ambianic-pnp.svg)](https://badge.fury.io/js/ambianic-pnp)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![codecov](https://codecov.io/gh/ambianic/ambianic-pnp/branch/master/graph/badge.svg)](https://codecov.io/gh/ambianic/ambianic-pnp)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fambianic%2Fambianic-pnp.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fambianic%2Fambianic-pnp?ref=badge_shield)
 [![CodeFactor](https://www.codefactor.io/repository/github/ambianic/ambianic-pnp/badge)](https://www.codefactor.io/repository/github/ambianic/ambianic-pnp)
-
 
 Ambianic Plug and Play (PnP) allows Ambianic UI users to discover local Ambianic Edge devices automatically and control them remotely on the go.
 
@@ -21,7 +19,7 @@ Ambianic PnP does not see any of the data exchanged between users and their edge
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
-Create a ```sh .env ``` file and copy the content from the ```sh .env.example ``` and paste it in your .env file.
+Create a `.env` file and copy the content from the `.env.example` and paste it in your .env file.
 
 ```sh
 # git clone this project from github
@@ -50,5 +48,5 @@ Not available yet. Contributors welcome!
 
 ## Acknowledgements
 
--   Ambianic PnP was originally inspired by the awesome [ShareDrop](https://github.com/cowbell/sharedrop) project.
--   [PeerJS](https://github.com/peers/peerjs) is another great source of inspiration for Ambianic PnP.
+- Ambianic PnP was originally inspired by the awesome [ShareDrop](https://github.com/cowbell/sharedrop) project.
+- [PeerJS](https://github.com/peers/peerjs) is another great source of inspiration for Ambianic PnP.
