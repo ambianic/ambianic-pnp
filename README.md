@@ -21,6 +21,8 @@ Ambianic PnP does not see any of the data exchanged between users and their edge
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
+Create a ```sh .env ``` file and copy the content from the ```sh .env.example ``` and paste it in your .env file.
+
 ```sh
 # git clone this project from github
 $ cd ambianic-pnp
