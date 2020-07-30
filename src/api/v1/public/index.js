@@ -1,6 +1,9 @@
 const express = require('express');
 
-module.exports = ({ config, realm }) => {
+module.exports = ({
+  config,
+  realm
+}) => {
   const app = express.Router();
 
   // Retrieve guaranteed random ID.
