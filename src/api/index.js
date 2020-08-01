@@ -23,17 +23,6 @@ module.exports = ({
     res.send(publicContent);
   });
 
-  /*
-   * Handle 404 error
-   */
-  // app.use('*', (req, res) => {
-  //   res.status(404).json({
-  //     errors: {
-  //       msg: 'URL_NOT_FOUND'
-  //     }
-  //   })
-  // })
-
   app.use('/:key', require('./v1/public')({
     config,
     realm
