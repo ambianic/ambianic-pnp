@@ -52,7 +52,7 @@
     "@semantic-release/release-notes-generator": "^9.0.0",
     "chai": "^4.2.0",
     "codecov": "^3.6.5",
-    "eslint": "^6.2.1",
+    "eslint": "^7.19.0",
     "mocha": "^8.1.0",
     "nyc": "^15.0.0",
     "semistandard": "^16.0.0",
