@@ -9,11 +9,11 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/ambianic/ambianic-pnp/badge)](https://www.codefactor.io/repository/github/ambianic/ambianic-pnp)
 
 
-Ambianic Plug and Play (PnP) allows Ambianic UI users to discover local Ambianic Edge devices automatically and control them remotely on the go.
+Ambianic Plug and Play (PnP) server allows [`peerfetch`](https://github.com/ambianic/peerfetch) peers to auto discover each other on a local WiFi network and connect directly.
 
-Ambianic PnP is a NodeJS server side app that normally runs on a host with public IP which can be accessed at all times by Ambianic UI client devices and Ambianic Edge devices. It acts as a [WebRTC peer discovery](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling) server.
+Ambianic PnP is based on the popular [PeerJS Server](https://github.com/peers/peerjs-server). It is an emphemeral NodeJS app that normally runs on a host with public IP which can be accessed at all times by `peerfetch` devices. It acts as a [WebRTC peer discovery](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling) server (also known as a **registrar** in the telecom world).
 
-By default Ambianic UI and Ambianic Edge devices use the Ambianic PnP service at pnp.ambianic.ai. The service is available for FREE to all users, but is not recommended for business critical application as it does not provide any strict uptime or SLA guarantees. For such cases, it is better to deploy and configure your own Ambianic PnP server.
+By default Ambianic UI (peerfetch client) and Ambianic Edge (peerfetch server) devices use the Ambianic PnP service at pnp.ambianic.ai. The service is available for FREE to all users, but is not recommended for business critical application as it does not provide any strict uptime or SLA guarantees. For such cases, it is better to deploy and configure your own Ambianic PnP server.
 
 Ambianic PnP does not see any of the data exchanged between users and their edge devices. Its a transient "matchmaking" service without a database layer. No user data is collected, stored and used in any way. Please feel free to inspect the code and point out (or rip out) any code that contradicts with Ambianic's main principles of privacy, transperancy and ultimate user control.
 
